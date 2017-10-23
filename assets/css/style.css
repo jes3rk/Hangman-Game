@@ -1,0 +1,8 @@
+body {
+  font-family: 'MedievalSharp', cursive;
+}
+
+.card-title {
+  text-align: center;
+  border-bottom: 5px gold solid;
+}
