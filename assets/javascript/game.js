@@ -53,7 +53,7 @@ function compareArray(arr1, arr2) {
   if (test === arr1.length) {
     winReset();
   };
-} 
+}
 
 function reset() {
   currentAnswer.length = 0;
@@ -66,12 +66,14 @@ function winReset() {
   alert("You win!")
   reset();
   numWin = numWin + 1;
+//  document.getElementById('winCard').style.opacity = "1";
 }
 
 function loseReset() {
   alert("You were turned into a newt! Correct answer was: " + removeComma(currentAnswer));
   reset();
   numLoss = numLoss + 1;
+  //document.getElementById('loseCard').style.opacity = "1";
 }
 
 

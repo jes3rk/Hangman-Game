@@ -33,5 +33,23 @@ img {
   position: relative;
   bottom: 45%;
   opacity: 0;
+}
 
+.win-lose {
+  width: 45%;
+  margin: auto;
+  z-index: 1;
+  position: absolute;
+  top: 10%;
+  left: 25%;
+  margin-bottom: 0px;
+  transition-duration: 1s;
+}
+
+#winCard {
+  opacity: 0;
+}
+
+#loseCard {
+  opacity: 0;
 }
