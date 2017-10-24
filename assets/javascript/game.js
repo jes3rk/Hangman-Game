@@ -53,7 +53,7 @@ function compareArray(arr1, arr2) {
   if (test === arr1.length) {
     winReset();
   };
-}
+} 
 
 function reset() {
   currentAnswer.length = 0;
