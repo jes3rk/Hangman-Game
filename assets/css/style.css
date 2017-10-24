@@ -1,15 +1,37 @@
 body {
   font-family: 'MedievalSharp', cursive;
+  background-image: url(../images/holy_grail_wallpaper.jpg);
 }
 
 .card-title {
   text-align: center;
   border-bottom: 5px gold solid;
-  font-size: 30px;
+  font-size: 28px;
 }
 
 .card-text {
   font-size: 24px;
   text-align: center;
   letter-spacing: 2px;
+}
+
+img {
+  width: 100%;
+}
+
+.lead {
+
+}
+
+#img {
+  transition-duration: 2s;
+  margin-top: 10px;
+}
+
+#player {
+  transition-duration: 2s;
+  position: relative;
+  bottom: 45%;
+  opacity: 0;
+
 }

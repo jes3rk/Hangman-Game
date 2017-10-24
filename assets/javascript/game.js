@@ -18,7 +18,11 @@ function chooseAnswer() {
   choose = Math.floor(Math.random()*allAnswers.length);
   currentAnswer = allAnswers[choose].split("");
   for (var i = 0; i < allAnswers[choose].length; i++) {
+    if (allAnswers[choose][i] === " ") {
+      displayAnswer.push(" ");
+    } else {
     displayAnswer.push("_");
+  }
   };
 }
 
@@ -74,17 +78,24 @@ function loseReset() {
 //Functional Actions
 document.onkeypress = function(event) {
   var guess = event.key;
-  newGuess(guess);
+  if (guess === "Enter") {
+    document.getElementById('img').style.opacity = "0";
+    document.getElementById('img').style.width = "0px";
+    document.getElementById('player').style.opacity = "1.0";
+    reset();
+  } else {
+    newGuess(guess);
+  }
   // Displays the current puzzle and wrong answers
-  document.getElementById('currentDisplay').innerHTML = removeComma(displayAnswer);
-  document.getElementById('wrongAnswers').innerHTML = wrongAnswers.toString();
+  document.getElementById('currentDisplay').innerHTML = removeComma(displayAnswer).toUpperCase();
+  document.getElementById('wrongAnswers').innerHTML = wrongAnswers.toString().toUpperCase();
+  // Display wins and losses to the player
+  document.getElementById('playerWins').innerHTML = "Wins: " + numWin.toString();
+  document.getElementById('playerLoss').innerHTML = "Losses: " + numLoss.toString();
   //Looks for win condition
   compareArray(currentAnswer, displayAnswer);
   //Looks for loss condition
   if (wrongAnswers.length > 10) {
     loseReset();
   };
-  // Display wins and losses to the player
-  document.getElementById('playerWins').innerHTML = "Wins: " + numWin.toString();
-  document.getElementById('playerLoss').innerHTML = "Losses: " + numLoss.toString();
 }
