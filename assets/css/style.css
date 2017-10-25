@@ -24,7 +24,8 @@ img {
 }
 
 #img {
-  transition-duration: 2s;
+  transition: opacity 1s, width 2s;
+
   margin-top: 10px;
 }
 

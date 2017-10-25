@@ -5,7 +5,7 @@ window.onload = function() {
 
 
 //Declare Variable
-var allAnswers = ["spamalot", "camelot", "holy grail", "king arthur", "knights who say ni", "lancelot", "tim", "holy hand grenade of antioch", "bible", "god", "shrubbery", "coconut", "african swallow", "brave sir robin", "migratory birds", "french", "english", "witch", "newt", "burn the witch", "watery tart", "sword", "round table", "huge tracts of land", "swamp", "castle", "wooden rabbit", "fart"];
+var allAnswers = ["spamalot", "camelot", "holy grail", "king arthur", "knights who say ni", "lancelot", "tim", "holy hand grenade of antioch", "bible", "god", "shrubbery", "coconut", "african swallow", "brave sir robin", "migratory birds", "french", "english", "witch", "newt", "burn the witch", "watery tart", "sword", "round table", "huge tracts of land", "castle", "wooden rabbit", "fart", "galahad", "lady of the lake"];
 
 var currentAnswer = [];
 var displayAnswer = [];
@@ -63,7 +63,6 @@ function reset() {
 }
 
 function winReset() {
-//  alert("You win!")
   reset();
   numWin = numWin + 1;
   document.getElementById('winCard').style.opacity = "1";
@@ -71,7 +70,6 @@ function winReset() {
 }
 
 function loseReset() {
-//  alert("You were turned into a newt! Correct answer was: " + removeComma(currentAnswer));
   reset();
   numLoss = numLoss + 1;
   document.getElementById('loseCard').style.opacity = "1";
@@ -80,12 +78,19 @@ function loseReset() {
 
 function goAway(id) {
   document.getElementById(id).style.opacity = "0";
-  document.getElementById(id).style["z-index"] = "1";
-  sleep(1000);
+  display();
+  sleep(1);
   document.getElementById(id).style.width = "1%";
 }
 
-
+function display() {
+  // Displays the current puzzle and wrong answers
+  document.getElementById('currentDisplay').innerHTML = removeComma(displayAnswer).toUpperCase();
+  document.getElementById('wrongAnswers').innerHTML = wrongAnswers.toString().toUpperCase();
+  // Display wins and losses to the player
+  document.getElementById('playerWins').innerHTML = "Wins: " + numWin.toString();
+  document.getElementById('playerLoss').innerHTML = "Losses: " + numLoss.toString();
+}
 //Functional Actions
 document.onkeypress = function(event) {
   var guess = event.key;
@@ -97,12 +102,7 @@ document.onkeypress = function(event) {
   } else {
     newGuess(guess);
   }
-  // Displays the current puzzle and wrong answers
-  document.getElementById('currentDisplay').innerHTML = removeComma(displayAnswer).toUpperCase();
-  document.getElementById('wrongAnswers').innerHTML = wrongAnswers.toString().toUpperCase();
-  // Display wins and losses to the player
-  document.getElementById('playerWins').innerHTML = "Wins: " + numWin.toString();
-  document.getElementById('playerLoss').innerHTML = "Losses: " + numLoss.toString();
+  display();
   //Looks for win condition
   compareArray(currentAnswer, displayAnswer);
   //Looks for loss condition
