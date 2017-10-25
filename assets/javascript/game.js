@@ -91,6 +91,7 @@ function display() {
   document.getElementById('playerWins').innerHTML = "Wins: " + numWin.toString();
   document.getElementById('playerLoss').innerHTML = "Losses: " + numLoss.toString();
 }
+
 //Functional Actions
 document.onkeypress = function(event) {
   var guess = event.key;
