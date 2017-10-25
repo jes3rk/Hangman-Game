@@ -36,14 +36,18 @@ img {
 }
 
 .win-lose {
-  width: 45%;
+  width: 1%;
   margin: auto;
-  z-index: 1;
+  z-index: 0;
   position: absolute;
   top: 10%;
   left: 25%;
   margin-bottom: 0px;
-  transition-duration: 1s;
+  transition: opacity 0.2s, width 0s;
+}
+
+.win-lose {
+  trans
 }
 
 #winCard {

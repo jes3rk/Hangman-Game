@@ -63,17 +63,26 @@ function reset() {
 }
 
 function winReset() {
-  alert("You win!")
+//  alert("You win!")
   reset();
   numWin = numWin + 1;
-//  document.getElementById('winCard').style.opacity = "1";
+  document.getElementById('winCard').style.opacity = "1";
+  document.getElementById('winCard').style.width = "45%"
 }
 
 function loseReset() {
-  alert("You were turned into a newt! Correct answer was: " + removeComma(currentAnswer));
+//  alert("You were turned into a newt! Correct answer was: " + removeComma(currentAnswer));
   reset();
   numLoss = numLoss + 1;
-  //document.getElementById('loseCard').style.opacity = "1";
+  document.getElementById('loseCard').style.opacity = "1";
+  document.getElementById('loseCard').style.width = "45%"
+}
+
+function goAway(id) {
+  document.getElementById(id).style.opacity = "0";
+  document.getElementById(id).style["z-index"] = "1";
+  sleep(1000);
+  document.getElementById(id).style.width = "1%";
 }
 
 
