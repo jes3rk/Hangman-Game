@@ -81,7 +81,7 @@ function goAway(id) {
   display();
   setTimeout(function() {
     document.getElementById(id).style.width = "1%";
-  }, 100);
+  }, 1050);
 }
 
 function display() {
