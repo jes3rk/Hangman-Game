@@ -79,8 +79,9 @@ function loseReset() {
 function goAway(id) {
   document.getElementById(id).style.opacity = "0";
   display();
-  sleep(1);
-  document.getElementById(id).style.width = "1%";
+  setTimeOut(function() {
+    document.getElementById(id).style.width = "1%";
+  }, 100);
 }
 
 function display() {
