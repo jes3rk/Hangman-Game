@@ -79,7 +79,7 @@ function loseReset() {
 function goAway(id) {
   document.getElementById(id).style.opacity = "0";
   display();
-  setTimeOut(function() {
+  setTimeout(function() {
     document.getElementById(id).style.width = "1%";
   }, 100);
 }
