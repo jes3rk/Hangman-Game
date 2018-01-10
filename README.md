@@ -2,7 +2,7 @@
 
 A simple game of hangman with a Monty Python theme. The purpose of this excerciese was to develop and implement game mechanics and algorithms using JavaScript.
 
-Deployed Version: 
+Deployed Version: https://jes3rk.github.io/Hangman-Game/
 
 ## Functionality
 
